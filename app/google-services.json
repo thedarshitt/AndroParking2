@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "662421119783",
+    "firebase_url": "https://androparking-fe832.firebaseio.com",
+    "project_id": "androparking-fe832",
+    "storage_bucket": "androparking-fe832.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662421119783:android:29e1587e09c35296",
+        "android_client_info": {
+          "package_name": "com.codecoresolutions.androparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662421119783-j3pmhkjg422c63llpqd7ktpc7t30n0nn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codecoresolutions.androparking",
+            "certificate_hash": "3a8808c2e3429da51c5be4c01c0a81556267a82a"
+          }
+        },
+        {
+          "client_id": "662421119783-q29gt9o878ka91uek4et3eg3vg603723.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNPBsJVUci8jObHQP-cTgWEmwMCPm_R_s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662421119783-q29gt9o878ka91uek4et3eg3vg603723.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
