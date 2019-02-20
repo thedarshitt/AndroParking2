@@ -1,26 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityHome">
+    tools:context=".ActivityHome"
+    android:paddingTop="50dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:orientation="vertical"
+
+    >
 
     <Button
+        android:paddingTop="50dp"
+        android:paddingLeft="50dp"
+        android:paddingBottom="50dp"
+        android:paddingRight="50dp"
         android:id="@+id/btnslot1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="A1"
-        android:textSize="40sp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
         android:onClick="onClickA1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        />
 
-</android.support.constraint.ConstraintLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <Button
+        android:id="@+id/btnslot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:onClick="onClickA2"
+        android:paddingLeft="50dp"
+        android:paddingTop="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
+        android:text="A2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <Button
+        android:id="@+id/btnslot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:onClick="onClickA3"
+        android:paddingLeft="50dp"
+        android:paddingTop="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
+        android:text="A3"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        tools:ignore="OnClick" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <Button
+        android:id="@+id/btnslot4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickA4"
+        android:paddingLeft="50dp"
+        android:paddingTop="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
+        android:text="A4"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        tools:ignore="OnClick"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+
+
+</LinearLayout>
+
+</ScrollView>

@@ -12,12 +12,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.Random;
-
 import java.util.Calendar;
 
 public class ActivityReserveDetails extends AppCompatActivity {
@@ -31,21 +28,25 @@ public class ActivityReserveDetails extends AppCompatActivity {
     Random r=new Random();
     int id=r.nextInt(4000)+3000;
     String uid="AP"+id+"2019";   //uid
-    String arrTime;
+    static String x;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve_details);
+
         mButtonReserve=findViewById(R.id.btnReserve);
         mEditTextName=findViewById(R.id.edName);
         mEditTextVehicle=findViewById(R.id.edVehicle);
         mTextViewTime=findViewById(R.id.tvTime);
         databaseReference= FirebaseDatabase.getInstance().getReference();
         progressDialog=new ProgressDialog(this);
+
     }
 
     public void onClickSelectTime(View view) {
+
         final Calendar c= Calendar.getInstance();
         mHour=c.get(Calendar.HOUR_OF_DAY);
         mMin=c.get(Calendar.MINUTE);
@@ -54,13 +55,19 @@ public class ActivityReserveDetails extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 mTextViewTime.setText(hourOfDay+" : "+minute);
-                ArrivalTime=mHour+":"+mMin;
+                ArrivalTime=hourOfDay+":"+minute;
             }
         },mHour,mMin,false);
         timePickerDialog.show();
+
     }
 
+    //sends data to firebase(UID{name,uid,arriving time,vehicle number})
     public void onClickReserve(View view) {
+        SendToFB();
+    }
+
+    public void SendToFB(){
         String name=mEditTextName.getText().toString();
         String vehicle=mEditTextVehicle.getText().toString();
 
@@ -74,15 +81,23 @@ public class ActivityReserveDetails extends AppCompatActivity {
             mEditTextVehicle.requestFocus();
             return;
         }
+
         progressDialog.setMessage("Reserving a slot, Please wait");
         progressDialog.show();
-        Fdata fdata=new Fdata(name,vehicle,uid,arrTime);
+
+        x=uid;
+        Fdata fdata=new Fdata(name,vehicle,uid,ArrivalTime);
         databaseReference.child(fdata.uid).setValue(fdata);
+
+
+
         progressDialog.dismiss();
 
-        Toast.makeText(this,"Reserved Successfully",Toast.LENGTH_LONG).show();
-        startActivity(new Intent(ActivityReserveDetails.this,ActivityHome.class));
+        Toast.makeText(this,"Slot Reserved Successfully",Toast.LENGTH_LONG).show();
+
+        startActivity(new Intent(ActivityReserveDetails.this,activityReservationSuccess.class));
         finish();
 
     }
+
 }

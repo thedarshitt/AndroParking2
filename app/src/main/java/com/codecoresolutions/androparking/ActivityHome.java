@@ -22,5 +22,11 @@ public class ActivityHome extends AppCompatActivity {
     public void onClickA1(View view) {
         startActivity(new Intent(ActivityHome.this,ActivityReserveDetails.class));
         finish();
+        mButtonA1.setClickable(false);
+        mButtonA1.setEnabled(false);
+    }
+
+    public void onClickA2(View view) {
+        //intent need to be added
     }
 }

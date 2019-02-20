@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".activityReservationSuccess"
+    android:paddingTop="50dp"
+    >
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Slot reserved successfully !!"
+        android:paddingBottom="20dp"
+        />
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unique ID : "
+        />
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:paddingBottom="30dp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/qrCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note : \nKindly please take a ScreenShot and scan this QR Code at the time of entrance"
+        android:layout_gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        />
+
+</LinearLayout>
