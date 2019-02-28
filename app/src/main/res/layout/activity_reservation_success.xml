@@ -6,13 +6,15 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".activityReservationSuccess"
-    android:paddingTop="50dp"
+    android:padding="10dp"
+    android:background="@drawable/background"
     >
 
     <TextView
+        android:id="@+id/tvSlotid"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Slot reserved successfully !!"
+        android:text=""
         android:paddingBottom="20dp"
         />
 
@@ -51,5 +53,13 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         />
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnHome"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Home"
+        android:onClick="onClickHome"/>
 
 </LinearLayout>

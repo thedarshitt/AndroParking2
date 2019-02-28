@@ -2,16 +2,15 @@ package com.codecoresolutions.androparking;
 
 //MODAL CLASS
 public class Fdata {
-    String uname,vno,uid,arrTime;
+    String uname,vno,uid,arrTime,slot,date;
 
-    public Fdata() {
-    }
-
-    public Fdata(String uname, String vno, String uid, String arrTime) {
+    public Fdata(String uname, String vno, String uid, String arrTime, String slot, String date) {
         this.uname = uname;
-        this.vno = vno;
+        this.vno = vno.toUpperCase();
         this.uid = uid;
         this.arrTime = arrTime;
+        this.slot = slot;
+        this.date = date;
     }
 
     public String getUname() {
@@ -44,5 +43,21 @@ public class Fdata {
 
     public void setArrTime(String arrTime) {
         this.arrTime = arrTime;
+    }
+
+    public String getSlot() {
+        return slot;
+    }
+
+    public void setSlot(String slot) {
+        this.slot = slot;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

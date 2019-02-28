@@ -1,5 +1,6 @@
 package com.codecoresolutions.androparking;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Bitmap;
 import android.nfc.Tag;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,7 +19,7 @@ import com.google.zxing.WriterException;
 
 public class activityReservationSuccess extends AppCompatActivity {
 
-    TextView value;
+    TextView value,slotid;
     String inputValue;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
@@ -27,19 +29,18 @@ public class activityReservationSuccess extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation_success);
-
         QRcode();
-
     }
 
     //Generates QR code based on UNIQUE ID
     public void QRcode(){
-
         ActivityReserveDetails ad =new ActivityReserveDetails();
         inputValue=ad.x;
-        value=(TextView)findViewById(R.id.tv_value);
-        qrImage=(ImageView)findViewById(R.id.qrCode);
-        value.setText(inputValue);;
+        slotid=findViewById(R.id.tvSlotid);
+        slotid.setText(new ActivityHome().slot+" reserved successfully !!");
+        value=findViewById(R.id.tv_value);
+        value.setText(inputValue);
+        qrImage=findViewById(R.id.qrCode);
 
         WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display display = manager.getDefaultDisplay();
@@ -62,4 +63,8 @@ public class activityReservationSuccess extends AppCompatActivity {
         }
     }
 
+    public void onClickHome(View view) {
+        startActivity(new Intent(activityReservationSuccess.this,ActivityHome.class));
+        finish();
+    }
 }
