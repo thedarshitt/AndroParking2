@@ -4,4 +4,8 @@
     <string name="select_time">Select Time : </string>
     <string name="vehicle_no">Vehicle No. (eg: MH 01 AB 1234)</string>
     <string name="androparking">AndroParking</string>
+    <string name="a4_available">A4 : Available</string>
+    <string name="a3_available">A3 : Available</string>
+    <string name="a2_available">A2 : Available</string>
+    <string name="a1_available">A1 : Available</string>
 </resources>

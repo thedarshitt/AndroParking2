@@ -3,18 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".activityReservationSuccess"
     android:padding="10dp"
-    android:background="@drawable/background"
-    >
+    android:background="@drawable/background">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:id="@+id/tvSlotid"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text=""
+        android:textColor="@color/colorPrimaryDark"
         android:paddingBottom="20dp"
         />
 
@@ -27,14 +35,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Unique ID : "
-        />
+        android:textColor="@color/colorPrimaryDark"/>
 
     <TextView
         android:id="@+id/tv_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" "
-        android:paddingBottom="30dp"/>
+        android:paddingBottom="30dp"
+        android:textColor="@color/colorPrimaryDark"/>
 
     </LinearLayout>
 
@@ -50,16 +59,23 @@
         android:layout_height="wrap_content"
         android:text="Note : \nKindly please take a ScreenShot and scan this QR Code at the time of entrance"
         android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         />
 
     <Button
         android:layout_marginTop="15dp"
-        android:id="@+id/btnHome"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
         android:text="Home"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:onClick="onClickHome"/>
 
 </LinearLayout>

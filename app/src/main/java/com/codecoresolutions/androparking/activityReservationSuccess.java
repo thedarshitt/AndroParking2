@@ -6,12 +6,16 @@ import android.graphics.Bitmap;
 import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Display;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import androidmads.library.qrgenearator.QRGSaver;
@@ -19,11 +23,11 @@ import com.google.zxing.WriterException;
 
 public class activityReservationSuccess extends AppCompatActivity {
 
-    TextView value,slotid;
-    String inputValue;
-    Bitmap bitmap;
-    QRGEncoder qrgEncoder;
-    ImageView qrImage;
+    private TextView value,slotid;
+    private String inputValue;
+    private Bitmap bitmap;
+    private QRGEncoder qrgEncoder;
+    private ImageView qrImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class activityReservationSuccess extends AppCompatActivity {
         setContentView(R.layout.activity_reservation_success);
         QRcode();
     }
+
 
     //Generates QR code based on UNIQUE ID
     public void QRcode(){
@@ -65,6 +70,7 @@ public class activityReservationSuccess extends AppCompatActivity {
 
     public void onClickHome(View view) {
         startActivity(new Intent(activityReservationSuccess.this,ActivityHome.class));
-        finish();
     }
+
+
 }

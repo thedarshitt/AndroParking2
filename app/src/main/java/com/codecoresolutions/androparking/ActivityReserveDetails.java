@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,7 @@ public class ActivityReserveDetails extends AppCompatActivity {
     private EditText mEditTextName,mEditTextVehicle;
     private ProgressDialog progressDialog;
     private DatabaseReference databaseReference; ///add 1more object for "checkAvailabilty" node
+    Toolbar toolbar;
     int mHour,mMin;
     String ArrivalTime;
     Random r=new Random();
@@ -45,7 +47,7 @@ public class ActivityReserveDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve_details);
-
+        initToolBar();
         mButtonReserve=findViewById(R.id.btnReserve);
         mEditTextName=findViewById(R.id.edName);
         mEditTextVehicle=findViewById(R.id.edVehicle);
@@ -54,6 +56,23 @@ public class ActivityReserveDetails extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
 
      }
+
+    private void initToolBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getApplicationContext(),ActivityHome.class));
+                    }
+                }
+
+        );
+    }
 
     public void onClickSelectTime(View view) {
 

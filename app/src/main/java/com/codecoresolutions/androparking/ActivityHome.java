@@ -23,7 +23,7 @@ public class ActivityHome extends AppCompatActivity {
 
     private Button mButtonS1,mButtonS2,mButtonS3,mButtonS4;
     static String slot;
-    private TextView mTextView;
+    private TextView mTextView,mTextViewS1,mTextViewS2,mTextViewS3,mTextViewS4;
     private DatabaseReference mdatabaseReference;
 
     @Override
@@ -36,49 +36,66 @@ public class ActivityHome extends AppCompatActivity {
         mButtonS3=findViewById(R.id.btnslot3);
         mButtonS4=findViewById(R.id.btnslot4);
 
-//        mdatabaseReference=FirebaseDatabase.getInstance().getReference("CheckAvailability");
-//        mdatabaseReference.child("CheckAvailability").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                String s1, s2, s3, s4;
-//                s1 = dataSnapshot.child("Slot1").getValue(String.class);
-//                s2 = dataSnapshot.child("Slot2").getValue(String.class);
-//                s3 = dataSnapshot.child("Slot3").getValue(String.class);
-//                s4 = dataSnapshot.child("Slot4").getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                mTextView.setText(databaseError.getMessage());
-//            }
-//        });
+        mTextViewS1=findViewById(R.id.textViewS1);
+        mTextViewS2=findViewById(R.id.textViewS2);
+        mTextViewS3=findViewById(R.id.textViewS3);
+        mTextViewS4=findViewById(R.id.textViewS4);
 
-        mButtonS1.setEnabled(false);
+       mdatabaseReference=FirebaseDatabase.getInstance().getReference();
+       mdatabaseReference.addValueEventListener(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-        }
+               String s1=dataSnapshot.child("CheckAvailability").child("Slot1").getValue(String.class);
+               String s2=dataSnapshot.child("CheckAvailability").child("Slot2").getValue(String.class);
+               String s3=dataSnapshot.child("CheckAvailability").child("Slot3").getValue(String.class);
+               String s4=dataSnapshot.child("CheckAvailability").child("Slot4").getValue(String.class);
+
+               if(s1.equals("booked")){
+                   mButtonS1.setEnabled(false);
+                   mTextViewS1.setText("A1 : Not Available");
+               }
+               if(s2.equals("booked")){
+                   mButtonS2.setEnabled(false);
+                   mTextViewS2.setText("A2 : Not Available");
+               }
+               if(s3.equals("booked")){
+                   mButtonS3.setEnabled(false);
+                   mTextViewS3.setText("A3 : Not Available");
+               }
+               if(s4.equals("booked")){
+                   mButtonS4.setEnabled(false);
+                   mTextViewS4.setText("A4 : Not Available");
+               }
+
+           }
+
+           @Override
+           public void onCancelled(@NonNull DatabaseError databaseError) {
+
+           }
+       });
+
+}
 
     public void onClickA1(View view) {
         slot="Slot1";
         startActivity(new Intent(ActivityHome.this,ActivityReserveDetails.class));
-        finish();
     }
 
     public void onClickA2(View view) {
         slot="Slot2";
         startActivity(new Intent(ActivityHome.this,ActivityReserveDetails.class));
-        finish();
     }
 
     public void onClickA3(View view) {
         slot="Slot3";
         startActivity(new Intent(ActivityHome.this,ActivityReserveDetails.class));
-        finish();
     }
 
     public void onClickA4(View view) {
         slot="Slot4";
         startActivity(new Intent(ActivityHome.this,ActivityReserveDetails.class));
-        finish();
     }
 
 }
