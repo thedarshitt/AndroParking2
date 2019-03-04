@@ -1,8 +1,11 @@
 package com.codecoresolutions.androparking;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.service.autofill.Dataset;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +28,7 @@ public class ActivityHome extends AppCompatActivity {
     static String slot;
     private TextView mTextView,mTextViewS1,mTextViewS2,mTextViewS3,mTextViewS4;
     private DatabaseReference mdatabaseReference;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,18 @@ public class ActivityHome extends AppCompatActivity {
         mTextViewS3=findViewById(R.id.textViewS3);
         mTextViewS4=findViewById(R.id.textViewS4);
 
+        mSwipeRefreshLayout=findViewById(R.id.swipe_refresh);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                startActivity(getIntent());
+                finish();
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
        mdatabaseReference=FirebaseDatabase.getInstance().getReference();
+
        mdatabaseReference.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -52,18 +67,22 @@ public class ActivityHome extends AppCompatActivity {
                String s4=dataSnapshot.child("CheckAvailability").child("Slot4").getValue(String.class);
 
                if(s1.equals("booked")){
+                   mButtonS1.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS1.setEnabled(false);
                    mTextViewS1.setText("A1 : Not Available");
                }
                if(s2.equals("booked")){
+                   mButtonS2.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS2.setEnabled(false);
                    mTextViewS2.setText("A2 : Not Available");
                }
                if(s3.equals("booked")){
+                   mButtonS3.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS3.setEnabled(false);
                    mTextViewS3.setText("A3 : Not Available");
                }
                if(s4.equals("booked")){
+                   mButtonS4.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS4.setEnabled(false);
                    mTextViewS4.setText("A4 : Not Available");
                }

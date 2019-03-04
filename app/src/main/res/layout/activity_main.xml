@@ -14,7 +14,7 @@
         android:layout_marginTop="178dp"
         android:background="@drawable/tvbg"
         android:gravity="center"
-        android:text="AndroParking\n___________________\nFind Space Online"
+        android:text="AndroParking\nFind Space Online"
         android:textSize="20dp"
         android:padding="5dp"
         android:textColor="#FFFFFF"
