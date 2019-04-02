@@ -33,12 +33,20 @@ public class activityReservationSuccess extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation_success);
-        QRcode();
+
+        ActivityReserveDetails ad =new ActivityReserveDetails();
+        inputValue=ad.x;
+        slotid=findViewById(R.id.tvSlotid);
+        slotid.setText(new ActivityHome().slot+" reserved successfully !!");
+        value=findViewById(R.id.tv_value);
+        value.setText(inputValue);
+        qrImage=findViewById(R.id.qrCode);
+        //QRcode();
     }
 
 
     //Generates QR code based on UNIQUE ID
-    public void QRcode(){
+    /*public void QRcode(){
         ActivityReserveDetails ad =new ActivityReserveDetails();
         inputValue=ad.x;
         slotid=findViewById(R.id.tvSlotid);
@@ -66,10 +74,11 @@ public class activityReservationSuccess extends AppCompatActivity {
         } catch (WriterException e) {
             Log.v("TAG", e.toString());
         }
-    }
+    }*/
 
     public void onClickHome(View view) {
         startActivity(new Intent(activityReservationSuccess.this,ActivityHome.class));
+        finish();
     }
 
 

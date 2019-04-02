@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mfromleft=AnimationUtils.loadAnimation(this,R.anim.fromleft);
+       /* mfromleft=AnimationUtils.loadAnimation(this,R.anim.fromleft);
         car=findViewById(R.id.car);
-        car.setAnimation(mfromleft);
+        car.setAnimation(mfromleft);*/
 
         new Handler().postDelayed(new Runnable() {
             @Override

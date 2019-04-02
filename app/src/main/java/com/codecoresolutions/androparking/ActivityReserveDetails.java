@@ -68,6 +68,7 @@ public class ActivityReserveDetails extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getApplicationContext(),ActivityHome.class));
+                        finish();
                     }
                 }
 
@@ -111,6 +112,11 @@ public class ActivityReserveDetails extends AppCompatActivity {
             x=uid;
             Fdata fdata=new Fdata(name,vehicle,uid,ArrivalTime,new ActivityHome().slot,date);
             databaseReference.child(fdata.uid).setValue(fdata);
+
+            FirebaseDatabase.getInstance().getReference("CheckAvailability")
+                    .child(new ActivityHome().slot)
+                    .setValue("onHold");
+
             Toast.makeText(this,"Slot Reserved Successfully",Toast.LENGTH_LONG).show();
             startActivity(new Intent(ActivityReserveDetails.this,activityReservationSuccess.class));
             finish();

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/home"
     android:padding="10dp">
 
 
@@ -36,7 +35,6 @@
             android:layout_marginBottom="50dp"
             android:text="SWIPE DOWN TO REFRESH"
             android:textSize="16sp"
-            android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -45,34 +43,36 @@
             android:layout_gravity="center"
             >
 
-            <Button
-                android:id="@+id/btnslot1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/slotshape"
-                android:onClick="onClickA1"
-                android:shadowColor="#A8A8A8"
-                android:shadowDx="0"
-                android:shadowDy="0"
-                android:shadowRadius="5"
-                android:text="A1"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+                <Button
+                    android:id="@+id/btnslot1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/slotshape"
+                    android:onClick="onClickA1"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:text="A1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp" />
 
-            <Button
-                android:id="@+id/btnslot2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="15dp"
-                android:background="@drawable/slotshape"
-                android:onClick="onClickA2"
-                android:shadowColor="#A8A8A8"
-                android:shadowDx="0"
-                android:shadowDy="0"
-                android:shadowRadius="5"
-                android:text="A2"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+
+                <Button
+                    android:id="@+id/btnslot2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/slotshape"
+                    android:onClick="onClickA2"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:text="A2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp" />
+
 
         </LinearLayout>
 
@@ -81,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp">
+
 
             <Button
                 android:id="@+id/btnslot3"
@@ -118,7 +119,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#FFFFFF"
             >
 
                 <LinearLayout

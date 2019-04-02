@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,25 +67,72 @@ public class ActivityHome extends AppCompatActivity {
                String s3=dataSnapshot.child("CheckAvailability").child("Slot3").getValue(String.class);
                String s4=dataSnapshot.child("CheckAvailability").child("Slot4").getValue(String.class);
 
+               //slot 1
                if(s1.equals("booked")){
                    mButtonS1.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS1.setEnabled(false);
                    mTextViewS1.setText("A1 : Not Available");
                }
+               if(s1.equals("onHold")){
+                   mButtonS1.setBackgroundResource(R.drawable.onhold_slot_shape);
+                   mButtonS1.setEnabled(false);
+                   mTextViewS1.setText("A1 : On Hold");
+               }
+               if(s1.equals("empty")){
+                   mButtonS1.setBackgroundResource(R.drawable.slotshape);
+                   mButtonS1.setEnabled(true);
+                   mTextViewS1.setText("A1 : Available");
+               }
+
+               //slot 2
                if(s2.equals("booked")){
                    mButtonS2.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS2.setEnabled(false);
                    mTextViewS2.setText("A2 : Not Available");
                }
+               if(s2.equals("onHold")){
+                   mButtonS2.setBackgroundResource(R.drawable.onhold_slot_shape);
+                   mButtonS2.setEnabled(false);
+                   mTextViewS2.setText("A2 : On Hold");
+               }
+               if(s2.equals("empty")){
+                   mButtonS2.setBackgroundResource(R.drawable.slotshape);
+                   mButtonS2.setEnabled(true);
+                   mTextViewS2.setText("A1 : Available");
+               }
+
+               //slot 3
                if(s3.equals("booked")){
                    mButtonS3.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS3.setEnabled(false);
                    mTextViewS3.setText("A3 : Not Available");
                }
+               if(s3.equals("onHold")){
+                   mButtonS3.setBackgroundResource(R.drawable.onhold_slot_shape);
+                   mButtonS3.setEnabled(false);
+                   mTextViewS3.setText("A3 : On Hold");
+               }
+               if(s3.equals("empty")){
+                   mButtonS3.setBackgroundResource(R.drawable.slotshape);
+                   mButtonS3.setEnabled(true);
+                   mTextViewS3.setText("A1 : Available");
+               }
+
+               //slot 4
                if(s4.equals("booked")){
                    mButtonS4.setBackgroundResource(R.drawable.reserved_slot_shape);
                    mButtonS4.setEnabled(false);
                    mTextViewS4.setText("A4 : Not Available");
+               }
+               if(s4.equals("onHold")){
+                   mButtonS4.setBackgroundResource(R.drawable.onhold_slot_shape);
+                   mButtonS4.setEnabled(false);
+                   mTextViewS4.setText("A4 : On Hold");
+               }
+               if(s4.equals("empty")){
+                   mButtonS4.setBackgroundResource(R.drawable.slotshape);
+                   mButtonS4.setEnabled(true);
+                   mTextViewS4.setText("A1 : Available");
                }
 
            }

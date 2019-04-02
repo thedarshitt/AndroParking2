@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splashscreen"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,12 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="178dp"
-        android:background="@drawable/tvbg"
         android:gravity="center"
         android:text="AndroParking\nFind Space Online"
         android:textSize="20dp"
         android:padding="5dp"
-        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +35,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="small_car.json"
         app:lottie_loop="true" />
 
 
